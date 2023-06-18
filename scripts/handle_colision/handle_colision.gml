@@ -2,7 +2,7 @@
 	/// @desc Setter Function
 	/// @param {real} [_num]=0 
 	function set_y(_num = 0){
-		self.y += _num
+		self.y += _num;
 	}
 #endregion
 
@@ -42,22 +42,28 @@
 	 * @param {real} _distance vertical_speed or horizontal_speed
 	 */
 	function handle_colision_vertical_in_edge(_setter, _distance) {
-		var _y = self.y + _distance, _y_sign = sign(_distance);
-	
-		if (    
-				point_in_rectangle(self.x, _y, 0, 0, window_get_width(), self.sprite_width / 2) ||
-				point_in_rectangle(self.x, _y, 0, window_get_height() - self.sprite_width / 2, window_get_width(), window_get_height())
-		    ) {
+		var _y = self.y + _distance,
+			_y_sign = sign(_distance);
+		 _width = window_get_width();
+		 _height = window_get_height();
+		 _width_sprite = self.sprite_width / 2;
+		
+		var _point_in_rectangle_up = function (_value) {
+			return point_in_rectangle(self.x, _value, 0, 0, _width, _width_sprite);
+		}
+		
+		var _point_in_rectangle_down = function (_value) {
+			return point_in_rectangle(self.x, _value, 0, _height - _width_sprite, _width,_height)
+		}
+		
+			if (_point_in_rectangle_up(_y) || _point_in_rectangle_down(_y)) {
 	        
-			while (
-				(!point_in_rectangle(self.x, self.y + _y_sign, 0, 0, window_get_width(), self.sprite_width / 2)) &&
-				(!point_in_rectangle(self.x, self.y + _y_sign, 0, window_get_height() - self.sprite_width / 2, window_get_width(), window_get_height()))
-			) {
+			while (!_point_in_rectangle_up(self.y + _y_sign) && !_point_in_rectangle_down(self.y + _y_sign)) {
 	            script_execute(_setter, sign(_distance));
 	        }
         
 			_distance = 0;
-			obj_ball.movement = -obj_ball.movement;
+			self.movement = -self.movement;
 			audio_play_sound(snd_collision_ball, 10, false);
 		}
 		script_execute(_setter, _distance);
