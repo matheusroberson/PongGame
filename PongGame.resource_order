@@ -24,6 +24,7 @@
     {"name":"spr_background","order":1,"path":"sprites/spr_background/spr_background.yy",},
     {"name":"obj_global","order":4,"path":"objects/obj_global/obj_global.yy",},
     {"name":"spr_player","order":2,"path":"sprites/spr_player/spr_player.yy",},
+    {"name":"handle_colision","order":1,"path":"scripts/handle_colision/handle_colision.yy",},
     {"name":"spr_limit","order":3,"path":"sprites/spr_limit/spr_limit.yy",},
     {"name":"spr_ball","order":4,"path":"sprites/spr_ball/spr_ball.yy",},
   ],

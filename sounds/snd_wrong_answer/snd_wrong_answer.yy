@@ -19,5 +19,5 @@
   "sampleRate": 5512,
   "soundFile": "snd_wrong_answer.mp3",
   "type": 0,
-  "volume": 0.63,
+  "volume": 0.29,
 }

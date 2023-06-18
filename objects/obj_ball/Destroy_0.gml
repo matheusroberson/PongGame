@@ -1,1 +1,1 @@
-handleStartGame();
+handle_start_game();

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "src_handleStartGame",
+  "name": "handle_colision",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
