@@ -1,6 +1,6 @@
 y_offset = 64;
 seconds = 2;
-obj_speed = global.ball_speed;
+obj_speed = BALL_SPEED;
 movement = choose(1, -1);
 movement_horizontal = choose(1, -1);
 vertical_speed = 0;

@@ -44,16 +44,17 @@
 	function handle_colision_vertical_in_edge(_setter, _distance) {
 		var _y = self.y + _distance,
 			_y_sign = sign(_distance);
-		 _width = window_get_width();
-		 _height = window_get_height();
-		 _width_sprite = self.sprite_width / 2;
-		
+	
 		var _point_in_rectangle_up = function (_value) {
+			var _width = window_get_width();
+			var _width_sprite = self.sprite_width / 2;
 			return point_in_rectangle(self.x, _value, 0, 0, _width, _width_sprite);
 		}
-		
 		var _point_in_rectangle_down = function (_value) {
-			return point_in_rectangle(self.x, _value, 0, _height - _width_sprite, _width,_height)
+			var _width = window_get_width();
+			var _width_sprite = self.sprite_width / 2;
+			var _height = window_get_height();
+			return point_in_rectangle(self.x, _value, 0, _height - _width_sprite, _width, _height)
 		}
 		
 			if (_point_in_rectangle_up(_y) || _point_in_rectangle_down(_y)) {

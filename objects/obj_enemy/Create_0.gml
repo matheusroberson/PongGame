@@ -1,5 +1,5 @@
 vertical_speed = 0;
-obj_speed =  global.players_speed;
+obj_speed =  PLAYERS_SPEED;
 points = 0;
-image_yscale += global.players_yscale_image;
+image_yscale += PLAYERS_YSCALE_IMAGE;
 movement = 0;
